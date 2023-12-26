@@ -24,7 +24,11 @@ public class EnginePartIdentifier {
         //Find indexes of all parts and then check for numbers in a 3 degrees of freedom pattern
         //Have to be careful not to count some parts twice...
         List<MatrixIndex> enginePartIndices = getEnginePartIndexes(matrix);
-
+        enginePartIndices.forEach(index -> {
+            //Check if there are integers near
+            boolean hasNearIntegers = NearIntegerDetector.hasNearIntegers(matrix, index);
+            //If there are integers resolve them!
+        });
 
         return -1;
     }
@@ -41,11 +45,5 @@ public class EnginePartIdentifier {
             }
         }
         return indices;
-    }
-
-    private static int resolveInteger() {
-
-
-        return -1;
     }
 }
