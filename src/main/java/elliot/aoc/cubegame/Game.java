@@ -16,24 +16,12 @@ public class Game {
         this.id = id;
     }
 
-    public int getMaxBlueCubes() {
-        return maxBlueCubes;
-    }
-
     public void setMaxBlueCubes(int maxBlueCubes) {
         this.maxBlueCubes = maxBlueCubes;
     }
 
-    public int getMaxRedCubes() {
-        return maxRedCubes;
-    }
-
     public void setMaxRedCubes(int maxRedCubes) {
         this.maxRedCubes = maxRedCubes;
-    }
-
-    public int getMaxGreenCubes() {
-        return maxGreenCubes;
     }
 
     public void setMaxGreenCubes(int maxGreenCubes) {
@@ -42,6 +30,14 @@ public class Game {
 
     public boolean isWithinLimits(final int blueLimit, final int redLimit, final int greenLimit) {
         return this.maxBlueCubes <= blueLimit && this.maxRedCubes <= redLimit && this.maxGreenCubes <= greenLimit;
+    }
+
+    public int getPowerofMaxCubes() {
+        //Default to 1 to avoid multiplying by 0
+        int bluePower = this.maxBlueCubes != 0 ? this.maxBlueCubes : 1;
+        int redPower = this.maxRedCubes != 0 ? this.maxRedCubes : 1;
+        int greenPower = this.maxGreenCubes != 0 ? this.maxGreenCubes : 1;
+        return bluePower * redPower * greenPower;
     }
 
 }

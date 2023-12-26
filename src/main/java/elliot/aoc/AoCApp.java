@@ -11,7 +11,9 @@ public class AoCApp {
         InputConsumer inputConsumer = new InputConsumer();
         List<String> inputStrings = inputConsumer.getInputAsList(new File("src/main/resources/challenge_2_input.txt"));
 //        int res = ElfTrebuchetCalibrator.getElfTrebuchetCalibration(inputStrings);
-        int res = ElfGameCalculator.getSumOfPossibleGameIds(inputStrings, 14, 12, 13);
+//        int res = ElfGameCalculator.getSumOfPossibleGameIds(inputStrings, 14, 12, 13);
+        int res = ElfGameCalculator.getPowerOfCubes(inputStrings);
+
         System.out.println("Result: " + res);
     }
 }

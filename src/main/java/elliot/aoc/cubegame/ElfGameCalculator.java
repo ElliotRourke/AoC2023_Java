@@ -24,6 +24,17 @@ public class ElfGameCalculator {
                 .reduce(0, Integer::sum);
     }
 
+    public static int getPowerOfCubes(final List<String> input) {
+        List<Game> games = input.stream()
+                .map(ElfGameCalculator::transformInputIntoGame)
+                .filter(game -> game.getId() != -1)
+                .toList();
+
+        return games.stream()
+                .map(Game::getPowerofMaxCubes)
+                .reduce(0, Integer::sum);
+    }
+
     private static Game transformInputIntoGame(String input) {
         Game game = new Game();
         String[] match = input.split(COLON);
@@ -51,7 +62,8 @@ public class ElfGameCalculator {
                 .flatMap(Arrays::stream)
                 .filter(s -> s.contains(colour))
                 .map(ElfGameCalculator::getNumberFromRound)
-                .max(Integer::compareTo).orElseGet(() -> -1);
+                .max(Integer::compareTo)
+                .orElseGet(() -> -1);
     }
 
     private static int getNumberFromRound(String s) {
