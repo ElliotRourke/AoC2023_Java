@@ -9,21 +9,21 @@ public class NearIntegerDetector {
 
     public static boolean hasNearIntegers(String[][] matrix, MatrixIndex index) {
         //Need to check in all directions around point, but obey constraints (sides, corners)
-        if (isLeftSide(matrix, index)) {
-            return false;
-        } else if (isRightSide(matrix, index)) {
-            return false;
-        } else if (isBottomSide(matrix, index)) {
-            return false;
-        } else if (isTopSide(matrix, index)) {
-            return false;
-        } else if (isTopRightCorner(matrix, index)) {
+        if (isTopRightCorner(matrix, index)) {
             return false;
         } else if (isTopLeftCorner(matrix, index)) {
             return false;
         } else if (isBottomRightCorner(matrix, index)) {
             return false;
         } else if (isBottomLeftCorner(matrix, index)) {
+            return false;
+        } if (isLeftSide(matrix, index)) {
+            return false;
+        } else if (isRightSide(matrix, index)) {
+            return false;
+        } else if (isBottomSide(matrix, index)) {
+            return false;
+        } else if (isTopSide(matrix, index)) {
             return false;
         } else {
             return false;
