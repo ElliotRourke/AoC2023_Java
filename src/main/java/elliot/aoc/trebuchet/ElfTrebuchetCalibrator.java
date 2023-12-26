@@ -1,12 +1,13 @@
-package elliot.aoc;
+package elliot.aoc.trebuchet;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static elliot.aoc.util.Constant.EMPTY_STRING;
+
 public class ElfTrebuchetCalibrator {
     private static final int RADIX = 10;
-    private static final String EMPTY_STRING = "";
     private static final String REMOVAL_REGEX_STRING = "[^one|^two|^three|^four|^five|^six|^seven|^eight|^nine|[0-9]]";
     private static final Map<String, Integer> WRITTEN_NUMBERS = Map.of(
             "one", 1,
