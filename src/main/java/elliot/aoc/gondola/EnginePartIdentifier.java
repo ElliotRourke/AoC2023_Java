@@ -3,11 +3,12 @@ package elliot.aoc.gondola;
 import java.util.ArrayList;
 import java.util.List;
 
+import static elliot.aoc.util.Constant.MATRIX_DEPTH;
+
 public class EnginePartIdentifier {
 
     private static final String ENGINE_PARTS_REGEX = "[^.]";
     private static final String NON_DIGIT_REGEX = "[^0-9]";
-    public static final int MATRIX_DEPTH = 10;
 
     private EnginePartIdentifier() {}
 
